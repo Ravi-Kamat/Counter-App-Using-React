@@ -1,0 +1,63 @@
+body {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container {
+  width: 300px;
+  height: 300px;
+  border: 10px solid transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  color: #100f0f;
+  box-shadow: 0px 0px 10px 0px;
+  position: relative;
+  padding: 20px;
+}
+.container::before {
+  content: "";
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  right: -10px;
+  bottom: -10px;
+  border: 10px solid transparent;
+  border-radius: inherit;
+  background: linear-gradient(90deg, #ff4957, #57d4ff, #ff4957);
+  background-size: 200% 200%;
+  animation: borderRotation 4s alternate-reverse infinite;
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: destination-out;
+  mask-composite: exclude;
+  z-index: -1;
+}
+.value-div {
+  margin-bottom: 30px;
+  font-size: 30px;
+}
+
+.btn {
+  display: flex;
+  gap: 10px;
+}
+button {
+  background-color: rgb(79, 111, 144);
+  color: white;
+  border: 0;
+  padding: 7px 5px;
+  border-radius: 6px;
+}
+
+@keyframes borderRotation {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 100% 50%;
+  }
+}
